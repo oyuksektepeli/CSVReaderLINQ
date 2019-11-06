@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace CSVReaderLINQ
 {
@@ -14,7 +15,7 @@ namespace CSVReaderLINQ
             List<Country> countries = csvreader.ReadAllCountries();
 
 
-            foreach (Country country in countries)
+            foreach (Country country in countries.Take(10))
             {
                 Console.WriteLine($"{Formatter.FormatPopulation(country.Population).PadLeft(15)}: {country.Name}");
             }
