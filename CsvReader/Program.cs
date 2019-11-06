@@ -14,8 +14,12 @@ namespace CSVReaderLINQ
 
             List<Country> countries = csvreader.ReadAllCountries();
 
+            var filteredCountries = countries.Where(x => !x.Name.Contains(',')).Take(20);
+            var filteredCountries2 = from country in countries
+                                     where !country.Name.Contains(',')
+                                     select country;
 
-            foreach (Country country in countries.Where(x => !x.Name.Contains(',')).Take(20))
+            foreach (Country country in filteredCountries2)
             {
                 Console.WriteLine($"{Formatter.FormatPopulation(country.Population).PadLeft(15)}: {country.Name}");
             }
