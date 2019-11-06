@@ -15,7 +15,7 @@ namespace CSVReaderLINQ
             List<Country> countries = csvreader.ReadAllCountries();
 
 
-            foreach (Country country in countries.OrderBy(x => x.Name))
+            foreach (Country country in countries.OrderBy(x => x.Name).Take(10))
             {
                 Console.WriteLine($"{Formatter.FormatPopulation(country.Population).PadLeft(15)}: {country.Name}");
             }
