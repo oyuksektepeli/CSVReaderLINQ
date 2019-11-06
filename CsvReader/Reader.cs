@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-namespace CSVReaderDataManipulation
+namespace CSVReaderLINQ
 {
     class Reader
     {
@@ -33,10 +33,7 @@ namespace CSVReaderDataManipulation
             return countries;
         }
         
-        public void RemoveCommaCountries(List<Country> countries)
-        {
-            countries.RemoveAll(x => x.Name.Contains(","));
-        }
+        
 
         public Country ReadCountryFromCsvLine(string csvLine)
         {
